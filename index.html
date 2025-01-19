@@ -14,8 +14,22 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow: auto;
         }
-
+        @keyframes pageLoad {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
         .card {
             background: #fff;
             border-radius: 10px;
@@ -23,8 +37,8 @@
             width: 400px;
             padding: 20px;
             text-align: center;
+            animation: pageLoad 1.5s ease-out; /* Apply fade-in + scale effect */
         }
-
         .profile-image {
             width: 100px;
             height: 100px;
@@ -111,20 +125,21 @@
         <h2>Front-End Developer</h2>
 
         <div class="section">
-            <h3>I'm a passionate Front-End Developer</h3>
             <p>
-                Hi, I’m Rohaizi Mohamed – Front-End Developer Open for Freelance Projects. I’m currently looking for small front-end projects or tasks that involve Vue.js, TypeScript, and modern UI libraries. Whether it’s building new features or improving existing ones, I’m here to help bring your ideas to life.
+                Hi, I’m Rohaizi Mohamed, a Front-End Developer with 4 years of experience in Vue.js, TypeScript, and modern UI libraries. Although I’m new to freelancing, I bring a strong background in building user-friendly, high-performance web applications. I’m eager to collaborate on small projects to support my side income. Let’s bring your ideas to life!
             </p>
         </div>
 
         <div class="section">
-            <h3>🛠 Tech Stack:</h3>
-            <p>Vue.js, JavaScript, TypeScript, Vuex, Pinia, Vue Router, Tailwind CSS, Vuetify, Element UI, Pug (Jade), SCSS, Stylus, Vue CLI, Vite, Storybook</p>
+            <h3>🛠 Tech Stack</h3>
+            <p><strong>Frameworks & Libraries:</strong> Vue.js(Pinia, Vuex, Vue Router), Vuetify, Tailwind CSS, Element UI</p>
+            <p><strong>Languages:</strong> JavaScript, TypeScript, Pug (Jade), SCSS, Stylus</p>
+            <p><strong>Tools:</strong> Vue CLI, Vite, Storybook, Git</p>
         </div>
 
         <div class="section">
             <h3>💰 Hourly Rate:</h3>
-            <p>80 MYR/hour (Flexible based on project scope)</p>
+            <p>65 MYR/hour (Flexible based on project scope)</p>
         </div>
 
         <div class="section">
@@ -144,3 +159,12 @@
     </div>
 </body>
 </html>
+
+<script>
+    window.onload = () => {
+        // Delay scrolling to top until after the animation finishes
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 1500);  // Same duration as the animation (1.5s)
+    };
+</script>
